@@ -1,0 +1,30 @@
+ {{#if name}}
+  <h3 class="m-3">Добро пожаловать,
+  {{name}} </h3>
+{{/if}}
+
+<nav class="w-25">
+  <ul class="d-flex flex-row justify-content-around">
+    <li>
+      <a href="/">На главную</a>
+    </li>
+    <li>
+      <a href="/galery">Галерея</a>
+    </li>
+    {{#if name}}
+      <li>
+        <a href="/auth/signout">Выход</a>
+      </li>
+    {{else}}
+
+      <li>
+        <a href="/auth/signup">Регистрация</a>
+      </li>
+      <li>
+        <a href="/auth/signin">Вход</a>
+      </li>
+
+    {{/if}}
+
+  </ul>
+</nav>

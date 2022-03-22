@@ -1,0 +1,31 @@
+<h1 class="text-center">Test photostock</h1>
+
+<div class="d-flex justify-content-center">
+	<form class="d-flex flex-column align-items-center w-75 py-10" action="/addphoto" method="POST">
+		<div class="mb-3 w-50">
+			<input name="src" placeholder="Вставьте ссылку на изображение" type="text" class="form-control">
+		</div>
+		<div class="mb-3 w-50">
+			<input name="description" placeholder="Описание" type="text" class="form-control">
+		</div>
+		<button type="submit" class="btn btn-primary">Отправить</button>
+	</form>
+</div>
+
+<hr />
+<div class="container w-75 p-10">
+    <div class="row row-cols-3 justify-content-around gy-3">
+        {{#each srcOfImg}} 
+        <div data-card name="imgCard" class="card col" style="width: 18rem;">
+            <a href="{{this.src}}">
+            <img src="{{this.src}}" class="card-img-top pt-2" >
+            </a>
+            <div class="card-body">
+                <h5 class="card-title text-center">{{this.description}}</h5>
+            </div>
+            <button data-btn type="button" class="btn w-25"><i class="fas fa-solid fa-trash"></i></button>
+        </div>
+        {{/each}}
+        
+    </div>
+</div>
